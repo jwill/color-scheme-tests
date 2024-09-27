@@ -17,7 +17,7 @@ class ColorSchemeScreen extends StatelessWidget {
     secondary: scheme2.secondary, secondaryContainer: scheme2.secondaryContainer, onSecondary: scheme2.onSecondary, onSecondaryContainer: scheme2.onSecondaryContainer
     );
 
-    ColorScheme scheme5 = fromColors2(brightness: Brightness.dark, primary: Colors.green, secondary: Colors.blue, useMonochromeSurfaces: true);
+    ColorScheme scheme5 = fromColors2(brightness: Brightness.dark, primarySeed: Colors.green, secondarySeed: Colors.blue, useMonochromeSurfaces: true);
 
     return SingleChildScrollView(child:Center(child:
     Column(children: [

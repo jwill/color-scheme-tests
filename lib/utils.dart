@@ -344,10 +344,10 @@ ColorScheme fromColors({
 
 ColorScheme fromColors2({
   Brightness brightness = Brightness.light,
-  required Color primary,
-  Color? secondary,
-  Color? tertiary,
-  Color? error,
+  required Color primarySeed,
+  Color? secondarySeed,
+  Color? tertiarySeed,
+  Color? errorSeed,
   DynamicSchemeVariant dynamicSchemeVariant = DynamicSchemeVariant.tonalSpot,
   double contrastLevel = 0,
   bool useMonochromeSurfaces = false
@@ -454,7 +454,7 @@ ColorScheme fromColors2({
   late int _surfaceContainer;
   late int _surfaceContainerHigh;
   late int _surfaceContainerHighest;
-  final ps = getScheme(primary.value);
+  final ps = getScheme(primarySeed.value);
   {
     // Primary
     _primary = MDC.primary.getArgb(ps);
@@ -468,9 +468,9 @@ ColorScheme fromColors2({
     _onPrimaryFixedVariant = MDC.onPrimaryFixedVariant.getArgb(ps);
     _inversePrimary = MDC.inversePrimary.getArgb(ps);
   }
-  if (secondary != null) {
+  if (secondarySeed != null) {
     // Secondary
-    final s = getScheme(secondary.value);
+    final s = getScheme(secondarySeed.value);
     _secondary = MDC.primary.getArgb(s);
     _onSecondary = MDC.onPrimary.getArgb(s);
     _secondaryContainer = MDC.primaryContainer.getArgb(s);
@@ -489,9 +489,9 @@ ColorScheme fromColors2({
     _secondaryFixedDim = MDC.secondaryFixedDim.getArgb(ps);
     _onSecondaryFixedVariant = MDC.onSecondaryFixedVariant.getArgb(ps);
   }
-  if (tertiary != null) {
+  if (tertiarySeed != null) {
     // Tertiary
-    final s = getScheme(tertiary.value);
+    final s = getScheme(tertiarySeed.value);
     _tertiary = MDC.primary.getArgb(s);
     _onTertiary = MDC.onPrimary.getArgb(s);
     _tertiaryContainer = MDC.primaryContainer.getArgb(s);
@@ -510,9 +510,9 @@ ColorScheme fromColors2({
     _tertiaryFixedDim = MDC.tertiaryFixedDim.getArgb(ps);
     _onTertiaryFixedVariant = MDC.onTertiaryFixedVariant.getArgb(ps);
   }
-  if (error != null) {
+  if (errorSeed != null) {
     // Error
-    final s = getScheme(error.value);
+    final s = getScheme(errorSeed.value);
     _error = MDC.primary.getArgb(s);
     _onError = MDC.onPrimary.getArgb(s);
     _errorContainer = MDC.primaryContainer.getArgb(s);
